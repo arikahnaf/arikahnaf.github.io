@@ -1,0 +1,105 @@
+.education {
+    background: var(--second-bg-color);
+}
+
+.education-card {
+    background: var(--bg-color);
+    border-radius: 1.2rem;
+    padding: 2.5rem 3rem;
+    margin-bottom: 4rem;
+    transition: transform 0.3s ease;
+    border-left: 5px solid var(--main-color);
+    border-right: 5px solid var(--main-color);
+}
+
+.education-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.education-card h3.school {
+    font-size: 2.3rem;
+    margin-bottom: 0.6rem;
+    color: var(--main-color);
+}
+
+.degree {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.specialization {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-text-color);
+    font-style: italic;
+}
+
+/* Location and duration */
+.edu-meta {
+    text-align: right;
+}
+
+.edu-meta p {
+    margin: 0.4rem 0;
+    font-size: 1.6rem;
+}
+
+.edu-meta .location {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.edu-meta .grad {
+    color: white;
+}
+
+.edu-meta .grad strong {
+    font-weight: bold;
+}
+
+.edu-meta .grad .grad-label {
+    font-style: italic;
+    color: white;
+    font-weight: normal;
+}
+
+.courses {
+    margin-top: 1.5rem;
+}
+
+.courses h4 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.courses p {
+    font-size: 1.4rem;
+    color: var(--secondary-text-color);
+    line-height: 1.5;
+}
+
+/* -------------------- Media Queries -------------------- */
+@media (max-width: 768px) {
+    .edu-header {
+        flex-direction: column;
+        /* Stack header items vertically */
+        align-items: flex-start;
+    }
+
+    .edu-meta {
+        text-align: left;
+        margin-top: 1.5rem;
+    }
+}

@@ -1,0 +1,139 @@
+/* Consists of the logo and navigation bar */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2.5rem 5% 2.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+/* Logo */
+.logo {
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.logo span {
+    color: var(--main-color);
+    text-shadow: 0 0 25px var(--main-color);
+}
+
+/* Navigation bar */
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+/* Mobile Menu Icon */
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+    /* Hidden on desktop by default */
+}
+
+/* -------------------- Media Queries -------------------- */
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 5%;
+    }
+
+    #menu-icon {
+        display: block;
+        /* Show menu icon on mobile */
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: none;
+        /* Hide navigation bar by default */
+        text-align: center;
+        transition: 0.3s ease-in-out;
+    }
+
+    .navbar.active {
+        display: block;
+        /* Show nav bar when active */
+    }
+
+    .navbar a {
+        display: block;
+        /* Make links full width */
+        font-size: 2.2rem;
+        margin: 2rem 0;
+    }
+
+    .navbar a.active {
+        border-bottom: none;
+        /* Remove underline on active link for mobile */
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+        /* Show menu icon on mobile */
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: none;
+        /* Hide navigation bar by default */
+        text-align: center;
+        transition: 0.3s ease-in-out;
+    }
+
+    .navbar.active {
+        display: block;
+        /* Show nav bar when active */
+    }
+
+    .navbar a {
+        display: block;
+        /* Make links full width */
+        font-size: 2.2rem;
+        margin: 2rem 0;
+    }
+
+    .navbar a.active {
+        border-bottom: none;
+        /* Remove underline on active link for mobile */
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,108 @@
+/* Projects Section */
+.projects {
+    background: var(--second-bg-color);
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    max-width: 2100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: var(--bg-color);
+    border-radius: 1.2rem;
+    padding: 3rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--main-color);
+    border-right: 5px solid var(--main-color);
+    border-top: 5px solid var(--text-color);
+    border-bottom: 5px solid var(--text-color);
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.project-title {
+    font-size: 2.3rem;
+    color: var(--main-color);
+}
+
+.github-link {
+    font-size: 4rem;
+    color: var(--text-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.github-link:hover {
+    color: var(--main-color);
+    transform: scale(1.2);
+}
+
+.project-points {
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin: 1.5rem 0;
+}
+
+.project-points li {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--secondary-text-color);
+}
+
+.tech-stack {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tech-item-pill {
+    display: inline-block;
+    background-color: var(--main-color);
+    /* You can choose a different color */
+    color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 0.5rem 0.75rem 0.5rem 0;
+    /* Add some margin for spacing */
+}
+
+.in-progress-pill {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    display: inline-block;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 2.75rem 0.75rem 0.5rem 0;
+}
+
+/* -------------------- Media Queries -------------------- */
+@media (max-width: 991px) {
+    .project-container {
+        grid-template-columns: 1fr;
+        /* Change to a single column layout */
+    }
+}

@@ -1,0 +1,100 @@
+.skills {
+    background: var(--bg-color);
+}
+
+.skills-container {
+    margin-top: -1rem;
+}
+
+.skills-category {
+    margin-bottom: 4rem;
+}
+
+.category-title {
+    font-size: 2.9rem;
+    color: var(--main-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.skills-grid {
+    display: grid;
+    /* Changed to grid */
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    /* Responsive grid columns */
+    gap: 3rem;
+    /* Space between skill items */
+    justify-items: center;
+    /* Center items within their grid cells */
+    align-items: center;
+    /* Vertically align items in their grid cells */
+    max-width: 2100px;
+    /* Limit width of the grid on very large screens */
+    margin: 0 auto;
+    /* Center the grid container */
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-8px);
+}
+
+.skill-item i {
+    font-size: 6rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    /* Reduced margin */
+    transition: color 0.3s ease;
+}
+
+.skill-item:hover i {
+    color: white;
+}
+
+.skill-item svg {
+    width: 6rem;
+    /* Match font-size of <i> for consistent size */
+    height: 6rem;
+    fill: var(--main-color);
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    transition: filter 0.3s ease;
+    /* Use filter for SVG hover glow */
+}
+
+.skill-item:hover svg {
+    fill: white;
+}
+
+.skill-item p {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* -------------------- Media Queries -------------------- */
+@media (max-width: 768px) {
+    .category-title {
+        font-size: 2.5rem;
+    }
+
+    .skill-item i,
+    .skill-item svg {
+        font-size: 5rem;
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .skill-item p {
+        font-size: 1.6rem;
+    }
+}

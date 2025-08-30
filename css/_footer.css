@@ -1,0 +1,27 @@
+.footer {
+    background: var(--bg-color);
+    padding: 3rem 15%;
+    text-align: center;
+}
+
+.footer-content {
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-content p {
+    font-size: 1.7rem;
+    color: var(--secondary-text-color);
+    margin: 0;
+}
+
+/* -------------------- Media Queries -------------------- */
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 5%;
+    }
+
+    .footer-content p {
+        font-size: 1.4rem;
+    }
+}

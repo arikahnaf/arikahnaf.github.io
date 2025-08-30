@@ -1,0 +1,230 @@
+.contact {
+    background: var(--second-bg-color);
+}
+
+.contact h2 {
+    font-size: 5rem;
+    text-align: left;
+    margin: 3rem 0;
+}
+
+/* Direct Email Link Styling */
+.direct-email-info {
+    text-align: center;
+    /* Center text within this block */
+    width: 100%;
+    max-width: 500px;
+    /* Keep this block from becoming too wide */
+}
+
+.email-link {
+    display: inline-flex;
+    /* Use inline-flex for centered icon and text */
+    align-items: center;
+    gap: 1rem;
+    font-size: 2.4rem;
+    /* Larger font for prominence */
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 1rem 1.5rem;
+    /* Add padding to make it a touchable area */
+    border-radius: 0.8rem;
+    background: var(--bg-color);
+    /* Give it a background for definition */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    /* Subtle shadow */
+}
+
+.email-link i {
+    font-size: 3rem;
+    /* Larger icon to match text */
+    color: var(--main-color);
+}
+
+.email-link:hover,
+.email-link i:hover {
+    color: var(--text-color);
+    /* Change background on hover */
+    transform: translateY(-3px);
+    /* Lift slightly */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* Stack form and email vertically */
+    align-items: center;
+    /* Center the form and email horizontally */
+    gap: 4rem;
+    /* Space between form and direct email link */
+    width: 100%;
+    max-width: 2100px;
+    /* Max width for the entire form/email block */
+    margin: 0 auto;
+    /* Center the wrapper on larger screens */
+}
+
+/* Contact Form Styling */
+.contact-form {
+    background: var(--bg-color);
+    padding: 4rem;
+    /* Generous padding */
+    border-radius: 1.2rem;
+    /* Consistent rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    /* Consistent shadow */
+    width: 100%;
+    /* Take full width of its container */
+    /* Maximum width for the form itself */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1.6rem;
+    /* Large padding inside inputs */
+    margin-bottom: 2rem;
+    /* Space between inputs */
+    border: 1px solid var(--second-bg-color);
+    /* Subtle border for definition */
+    border-radius: 0.8rem;
+    /* Consistent input rounded corners */
+    background: var(--second-bg-color);
+    color: var(--text-color);
+    font-size: 1.7rem;
+    /* Readable font size */
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--main-color);
+    /* Highlight border on focus */
+    box-shadow: 0 0 0 3px rgba(var(--main-color-rgb), 0.2);
+    /* Subtle glow on focus */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--secondary-text-color);
+    opacity: 0.8;
+}
+
+.form-group {
+    display: flex;
+    gap: 2rem;
+    /* Space between name and email inputs */
+    margin-bottom: 2rem;
+    /* Ensure consistent spacing after form group */
+}
+
+.form-group input {
+    flex: 1;
+    /* Make name and email inputs share space equally */
+    margin-bottom: 0;
+    /* Remove bottom margin here as gap handles it */
+}
+
+.submit-btn {
+    display: block;
+    /* Added to allow margin: auto for centering */
+    width: 30%;
+    padding: 2rem;
+    /* Adjusted padding for better look */
+    border: none;
+    border-radius: 0.8rem;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 auto;
+    /* Centered the button */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: white;
+    /* Restored hover color to a blue shade */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(var(--main-color-rgb), 0.4);
+}
+
+/* --- Toast Notification Styles --- */
+#toast-container {
+    position: fixed;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    /* Allows clicks to pass through to elements below */
+}
+
+.toast-message {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.8rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    pointer-events: auto;
+    /* Re-enable pointer events for the toast itself */
+    max-width: 90vw;
+    text-align: center;
+}
+
+.toast-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast-message i {
+    font-size: 2.2rem;
+    color: var(--main-color);
+    /* Warning color for the icon */
+}
+
+/* -------------------- Media Queries -------------------- */
+@media (max-width: 768px) {
+    .contact h2 {
+        text-align: center;
+    }
+
+    .contact-form {
+        padding: 2.5rem;
+    }
+
+    .form-group {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1.6rem;
+    }
+
+    .form-group input {
+        margin-bottom: 2rem;
+    }
+
+    .submit-btn {
+        width: 60%;
+    }
+}

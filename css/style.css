@@ -1,0 +1,58 @@
+/* Import all component styles */
+@import url('_header.css');
+@import url('_home.css');
+@import url('_education.css');
+@import url('_experience.css');
+@import url('_projects.css');
+@import url('_skills.css');
+@import url('_contact.css');
+@import url('_footer.css');
+
+/* Universal selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Padding and border included wihtin element's defined height and width */
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Define CSS variables */
+:root {
+    --bg-color: black;
+    --second-bg-color: #141414;
+    --text-color: white;
+    --secondary-text-color: #e0e0e0;
+    --main-color: #45a9fc;
+}
+
+/* HTML element */
+html {
+    font-size: 60%;
+    /* Set 1rem = 10px */
+    overflow-x: hidden;
+}
+
+/* Body element */
+body {
+    background: var(--bg-color);
+    color: var(--text-color)
+}
+
+/* Styling for all sections: home, education, experience, projects, skills, contact */
+section {
+    min-height: 100vh;
+    padding: 10rem 10% 10rem;
+}
+
+/* Title for all sections */
+.heading {
+    font-size: 5rem;
+    text-align: center;
+    margin: 3rem 0;
+    padding-bottom: 1rem;
+}
