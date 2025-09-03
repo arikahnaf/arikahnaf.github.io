@@ -47,6 +47,24 @@ navLinks.forEach((link) => {
 window.addEventListener("scroll", highlightNavLink);
 highlightNavLink(); // Initial call to highlight the current section on page load
 
+// To protect email from bots
+document.addEventListener("DOMContentLoaded", () => {
+  const codes = [
+    97, 104, 110, 97, 102, 64, 109, 121, 46, 121, 111, 114, 107, 117, 46, 99,
+    97,
+  ];
+  const email = String.fromCharCode(...codes);
+
+  const emailLink = document.getElementById("email-link"); // <a>
+  const emailText = document.getElementById("email-text"); // <span>
+
+  // Set visible text
+  emailText.textContent = email;
+
+  // Set clickable link
+  emailLink.setAttribute("href", "mailto:" + email);
+});
+
 /* Contact form error message */
 document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.querySelector(".contact-form");
@@ -74,36 +92,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 5000);
   }
 
-  // Validate a single field
-  function validateField(inputElement, customMessage) {
-    if (inputElement.value.trim() === "") {
-      showToast(customMessage);
-      return false;
-    }
-    if (inputElement.id === "email" && !inputElement.value.includes("@")) {
-      showToast("Please enter a valid email address.");
-      return false;
-    }
-    return true;
-  }
-
   contactForm.addEventListener("submit", (event) => {
-    event.preventDefault(); // Prevent default browser submission
+    event.preventDefault(); // Stop the default browser action immediately
 
-    let isValidForm = true;
-
-    // Validate all fields on submission
-    // Note: Validation order matters for toast messages
-    if (!validateField(nameInput, "Name is required.")) isValidForm = false;
-    if (!validateField(emailInput, "Email is required.")) isValidForm = false;
-    if (!validateField(subjectInput, "Subject is required."))
-      isValidForm = false;
-    if (!validateField(messageInput, "Message is required."))
-      isValidForm = false;
-
-    if (isValidForm) {
-      // If all fields are valid, submit the form programmatically
-      contactForm.submit();
+    // Use 'if' statements with 'return' to exit on the first error.
+    // This is a much cleaner and more reliable pattern.
+    if (nameInput.value.trim() === "") {
+      showToast("Name is required.");
+      return; // Stop here and do not proceed
     }
+
+    if (emailInput.value.trim() === "") {
+      showToast("Email is required.");
+      return; // Stop here
+    }
+    if (!emailInput.value.includes("@")) {
+      showToast("Please enter a valid email address.");
+      return; // Stop here
+    }
+
+    if (subjectInput.value.trim() === "") {
+      showToast("Subject is required.");
+      return; // Stop here
+    }
+
+    if (messageInput.value.trim() === "") {
+      showToast("Message is required.");
+      return; // Stop here
+    }
+
+    // If all checks pass, the code will reach this point.
+    contactForm.submit();
   });
 });
