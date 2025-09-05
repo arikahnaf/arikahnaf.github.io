@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const emailText = document.getElementById("email-text"); // <span>
 
   // Set visible text
-  emailText.textContent = email;
+  // emailText.textContent = email;
 
   // Set clickable link
   emailLink.setAttribute("href", "mailto:" + email);
