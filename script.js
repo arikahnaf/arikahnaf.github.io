@@ -48,22 +48,22 @@ window.addEventListener("scroll", highlightNavLink);
 highlightNavLink(); // Initial call to highlight the current section on page load
 
 // To protect email from bots
-document.addEventListener("DOMContentLoaded", () => {
-  const codes = [
-    97, 104, 110, 97, 102, 64, 109, 121, 46, 121, 111, 114, 107, 117, 46, 99,
-    97,
-  ];
-  const email = String.fromCharCode(...codes);
+// document.addEventListener("DOMContentLoaded", () => {
+//   const codes = [
+//     97, 104, 110, 97, 102, 64, 109, 121, 46, 121, 111, 114, 107, 117, 46, 99,
+//     97,
+//   ];
+//   const email = String.fromCharCode(...codes);
 
-  const emailLink = document.getElementById("email-link"); // <a>
-  const emailText = document.getElementById("email-text"); // <span>
+//   const emailLink = document.getElementById("email-link"); // <a>
+//   const emailText = document.getElementById("email-text"); // <span>
 
-  // Set visible text
-  // emailText.textContent = email;
+//   // Set visible text
+//   // emailText.textContent = email;
 
-  // Set clickable link
-  emailLink.setAttribute("href", "mailto:" + email);
-});
+//   // Set clickable link
+//   emailLink.setAttribute("href", "mailto:" + email);
+// });
 
 /* Contact form error message */
 document.addEventListener("DOMContentLoaded", () => {

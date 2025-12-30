@@ -1,0 +1,3 @@
+# Ignore HTML and CSS in language stats
+index.html linguist-vendored
+css/* linguist-vendored
