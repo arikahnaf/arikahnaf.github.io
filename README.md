@@ -7,5 +7,8 @@ My personal website built using HTML, CSS, and JavaScript.
 
 ## 🔗 Live Website
 
+Not active currently:
 [arikahnaf.com](https://arikahnaf.com)  
+
+Active:
 [arikahnaf.github.io](https://arikahnaf.github.io)
